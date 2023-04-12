@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class SubArrayDivision : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] List<int> firststInput = new();
+    [SerializeField] List<int> secondInput = new();
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void GenerateFactor()
     {
-        
+
+        var x = firststInput[0];
+        for (int i = x; i < secondInput[0]; i++)
+        {
+            if (i % 2 == 0)
+            {
+                Debug.Log("diviser: " + i);
+            }
+        }
+
+
+        Debug.Log("" + x);
+
+
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.G)) GenerateFactor();
     }
 }
